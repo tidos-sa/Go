@@ -31,6 +31,32 @@ func soma(a int, b int) int {
 	*/
 }
 
+func media(a , b, c, d int) float64{
+	media := a+b+c+d
+	return float64(media) / 4.0
+}
+
+func QuestInt() float64{
+	var a,b,c,d int
+	fmt.Println("digite a primeira nota")
+	fmt.Scan(&a)
+	fmt.Println("digite a segunda nota")
+	fmt.Scan(&b)
+	fmt.Println("digite a terceira nota")
+	fmt.Scan(&c)
+	fmt.Println("digite a quarta nota")
+	fmt.Scan(&d)
+
+	return media(a,b,c,d)
+	
+}
+
+func conversorFarehin(num float64) float64{
+	var C float64
+	C = 5*((num-32)/9)
+	return (C)
+}
+
 func main(){
 
 	/*
@@ -48,8 +74,21 @@ func main(){
 	var result = soma(4,5)
 	Printf("o resultado da soma dos inteiro é ", result)
 	*/
-	
+
+	/*
+	//Faça um Programa que peça as 4 notas bimestrais e mostre a média.
+	result := media(5,5,5,5)
+	fmt.Println("a media das notas é: " ,result)
+	*/
+
+	/*
+	media da escola
+	result := QuestInt()
+	fmt.Println("a media dos numeros é: ", result)
+	*/
 	
 
-
+	var result float64
+	result = conversorFarehin(100)
+	fmt.Println("temperatura em farenhein seila oque: ",result)
 }
