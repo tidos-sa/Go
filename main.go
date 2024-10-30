@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+// estrutura sequencial -- lista de logica
 
 func ScanNumber () int {
 	var i int
@@ -56,7 +57,46 @@ func conversorFarehin(num float64) float64{
 	C = 5*((num-32)/9)
 	return (C)
 }
+// aquicimento acabou hora dos boss :)
 
+/*
+Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês. Calcule e mostre o total do seu salário no referido mês, sabendo-se que são descontados 11% para o Imposto de Renda, 8% para o INSS e 5% para o sindicato, faça um programa que nos dê:
+salário bruto.
+quanto pagou ao INSS.
+quanto pagou ao sindicato.
+o salário líquido.
+calcule os descontos e o salário líquido, conforme a tabela abaixo:
++ Salário Bruto : R$
+- IR (11%) : R$
+- INSS (8%) : R$
+- Sindicato ( 5%) : R$
+= Salário Liquido : R$
+*/
+
+func Anlsalario(){
+	var dias int
+	var valorhPorHoras int
+	var horas int
+
+	fmt.Println("O quanto vocë recebe por *HORA* ?")
+	fmt.Scan(&valorhPorHoras)
+	fmt.Println("Quantos dias voce trabalha por mes ?")
+	// calculo convertendo dias trabalhados em horas considerando que se trabalha 9h por dia.
+	fmt.Scan(&dias) // 23 x (9 horas) por dia = totalhoras trabalhadas 
+	fmt.Println("quantas horas por dia vc trabalha?")
+	fmt.Scan(&horas)
+
+	var salarioTotal  = valorhPorHoras*(horas*dias)
+	var IR  = (salarioTotal * 11) / 100
+	var INSS = (salarioTotal * 8) / 100
+	var Sindicato = (salarioTotal * 5) / 100
+	var liquido	= salarioTotal - (IR+INSS+Sindicato)
+
+
+	fmt.Println("o salario total: ", salarioTotal,"\nIR: -",IR,"\nINSS : -",INSS,"\nSINDICADO: -",Sindicato,"\nSÁLARIO LIQUIDO :",liquido)
+
+
+}
 func main(){
 
 	/*
@@ -87,8 +127,10 @@ func main(){
 	fmt.Println("a media dos numeros é: ", result)
 	*/
 	
-
+	/*
 	var result float64
 	result = conversorFarehin(100)
 	fmt.Println("temperatura em farenhein seila oque: ",result)
+	*/
+	Anlsalario()
 }
